@@ -1,0 +1,45 @@
+/* 
+    Document   : style
+    Created on : 2013-7-24, 13:43:56
+    Author     : Lee
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.btnGray{
+    filter: Alpha(opacity=10);-moz-opacity:.1;opacity:0.1;
+}
+#options{
+    float: right;
+    margin: 7px 10px 0 0;
+}
+
+a.scrArrAbsLeft
+{
+    background:url(../images/news_arr_l.png) no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 41px;
+    left: 0;
+    top: -50px;
+    position: relative;
+    width: 31px;
+}
+
+a.scrArrAbsRight
+{
+    background: url(../images/news_arr_r.png) no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    /*height: 41px;*/
+    position: absolute;
+    right: 100px;
+    top: 50px;
+}
+
+/* 旋转木马样式Carousel */
+#carousel1{width:900px;height:480px;overflow:hidden;position:relative;border-bottom:solid 1px #d8d9da;margin:0 auto;}
+#carousel1 img{border:none;width:350px;height:214px;border:solid 1px #000;}
+#carousel1 #title-text {font-size:22px;margin:10px 20px 0 0;padding:0;text-align:right;}
+#carousel1 #alt-text{font-size:14px;margin:5px 20px 0 0;padding:0;text-align:right;}
+#carousel1 #user-c{padding:0;position:absolute;right:15px;bottom:10px;}
+#carousel1 .carouselLeft,#carousel1 .carouselRight{position:absolute;bottom:20px;width:29px;height:25px;overflow:hidden;cursor:pointer;}
+#carousel1 .carouselLeft{right:20px;background:url(../images/button-right.png) no-repeat;}
+#carousel1 .carouselRight{right:48px;background:url(../images/button-left.png) no-repeat;}
