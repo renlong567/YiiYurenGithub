@@ -28,7 +28,6 @@ class AdminController extends Controller
     public function accessRules()
     {
         return array(
-<<<<<<< .mine
             array('allow', // allow all users to perform 'index' and 'view' actions
                 'actions' => array('login', 'captcha'),
                 'users' => array('*'),
@@ -44,27 +43,6 @@ class AdminController extends Controller
             array('deny', // deny all users
                 'users' => array('*'),
             ),
-=======
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('login'),
-                'users' => array('*'),
-            ),
-            array('allow',
-                'actions' => array('captcha'),
-                'users' => array('*'),
-            ),
-            array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'index', 'logout'),
-                'users' => array('@'),
-            ),
-            array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
-                'users' => array('admin'),
-            ),
-            array('deny', // deny all users
-                'users' => array('*'),
-            ),
->>>>>>> .r70
         );
     }
 
@@ -228,23 +206,13 @@ class AdminController extends Controller
             Yii::app()->end();
         }
         $this->layout = '//layouts/column';
-<<<<<<< .mine
         $model = new LoginForm('login');
         $result = array('status' => 0, 'msg' => '');
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
-=======
-        $model = new LoginForm;
-        $result = array('status' => 0, 'msg' => '');
-        if ($_SERVER['REQUEST_METHOD'] == 'POST')
->>>>>>> .r70
         {
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
-<<<<<<< .mine
             if ($model->validate() && $model->validateVerifyCode($this->createAction('captcha')->getVerifyCode()) && $model->login())
-=======
-            if ($model->validate() && $model->login() && $model->validateVerifyCode($this->createAction('captcha')->getVerifyCode()))
->>>>>>> .r70
             {
                 $result['status'] = 1;
                 $result['msg'] = '登陆成功，正在转至后台首页...';
@@ -269,19 +237,4 @@ class AdminController extends Controller
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
     }
-
-    public function actions()
-    {
-        return array(
-            'captcha' => array(
-                'class' => 'CCaptchaAction',
-                'backColor' => 0xFFFFFF,
-                'maxLength' => '8', // 最多生成几个字符
-                'minLength' => '7', // 最少生成几个字符
-                'height' => '40',
-                'width' => '230',
-            ),
-        );
-    }
-
 }

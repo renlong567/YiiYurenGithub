@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
         <link rel="stylesheet" href="css/matrix-login.css" />
         <link href="css/font-awesome.css" rel="stylesheet" />
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+        <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>-->
     </head>
     <body>
         <div id="loginbox">
@@ -29,7 +29,6 @@
                         </div>
                     </div>
                 </div>
-<<<<<<< .mine
                 <div class="control-group">
                     <div class="controls">
                         <div class="main_input_box">
@@ -51,30 +50,6 @@
                         </div>
                     </div>
                 </div>
-=======
-                <div class="control-group">
-                    <div class="controls">
-                        <div class="main_input_box">
-                            <span class="add-on bg_ly"><i class="icon-lock"></i></span>
-                            <input type="text" name="LoginForm[verifyCode]" placeholder="验证码" />
-                            <?php
-                            $this->widget('CCaptcha', array(
-                                'showRefreshButton' => false,
-                                'clickableImage' => true,
-                                'buttonLabel' => '刷新验证码',
-                                'imageOptions' => array(
-                                    'alt' => '点击换图',
-                                    'title' => '点击换图',
-                                    'style' => 'cursor:pointer',
-//                            'width'=>'100',
-//                            'padding' => '10'
-                                )
-                            ));
-                            ?>
-                        </div>
-                    </div>
-                </div>
->>>>>>> .r70
                 <div class="form-actions">
                     <!--<span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a></span>-->
                     <span class="pull-right">

@@ -12,7 +12,6 @@ class LoginForm extends CFormModel
     public $password;
     public $verifyCode;
     public $rememberMe;
-    public $verifyCode;
     private $_identity;
 
     /**
@@ -23,7 +22,6 @@ class LoginForm extends CFormModel
     public function rules()
     {
         return array(
-<<<<<<< .mine
             // username and password are required
             array('username, password,verifyCode', 'required'),
             array('verifyCode', 'captcha', 'on' => 'login', 'allowEmpty' => !CCaptcha::checkRequirements()),
@@ -31,18 +29,6 @@ class LoginForm extends CFormModel
             array('rememberMe', 'boolean'),
             // password needs to be authenticated
             array('password', 'authenticate'),
-=======
-            // username and password are required
-                  array( 'username, password,verifyCode' , 'required' ) ,
-//            array('username', 'required', 'message' => '登录帐号不能为空'),
-//            array('password', 'required', 'message' => '密码不能为空'),
-//            array('verifyCode', 'required', 'message' => '验证码不能为空'),
-            array('verifyCode', 'captcha', 'on' => 'login', 'allowEmpty' => !Yii::app()->admin->isGuest),
-            // rememberMe needs to be a boolean
-            array('rememberMe', 'boolean'),
-            // password needs to be authenticated
-            array('password', 'authenticate'),
->>>>>>> .r70
         );
     }
 
@@ -52,17 +38,10 @@ class LoginForm extends CFormModel
     public function attributeLabels()
     {
         return array(
-<<<<<<< .mine
             'rememberMe' => 'Remember me next time',
             'username' => '用户名',
             'password' => '密码',
             'verifyCode' => '验证码',
-=======
-            'rememberMe' => 'Remember me next time',
-            'username' => '用户名',
-            'password' => '密码',
-            'verifyCode' => '验证码'
->>>>>>> .r70
         );
     }
 
@@ -80,7 +59,6 @@ class LoginForm extends CFormModel
         }
     }
 
-<<<<<<< .mine
     public function validateVerifyCode($verifyCode)
     {
         if (strtolower($this->verifyCode) === strtolower($verifyCode))
@@ -93,20 +71,6 @@ class LoginForm extends CFormModel
         }
     }
 
-=======
-    public function validateVerifyCode($verifyCode)
-    {
-        if (strtolower($this->verifyCode) === strtolower($verifyCode))
-        {
-            return true;
-        }
-        else
-        {
-            $this->addError('verifyCode', '验证码错误.');
-        }
-    }
-
->>>>>>> .r70
     /**
      * Logs in the user using the given username and password in the model.
      * @return boolean whether login is successful
