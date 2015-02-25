@@ -156,19 +156,25 @@ class Accounts extends CActiveRecord
     public function create_table()
     {
         echo <<<ETO
-            <style>
-             *
-             {
-                 text-align:center;
-             }
-            table
-             {
-                 width:auto;
-                 float:left;
-                 margin:0 0 20px 20px;
-                 font-size:15px;
-             }
-    </style>
+		<html>
+			<head>
+				<title></title>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<style>
+					 *
+					 {
+						 text-align:center;
+					 }
+					table
+					 {
+						 width:auto;
+						 float:left;
+						 margin:0 0 20px 20px;
+						 font-size:15px;
+					 }
+				</style>
+			</head>
+            <body>
 ETO;
         echo '<div style="text-align:left;">' . CHtml::link('保存为Excel文件','index.php?r=table/excel') . '</div>';
         if(!empty($_REQUEST['team_title']))
@@ -243,7 +249,7 @@ ETO;
                     </tr>
 ETO;
                 }
-                echo "</table>";
+                echo "</table></body></html>";
             }
         }
     }
